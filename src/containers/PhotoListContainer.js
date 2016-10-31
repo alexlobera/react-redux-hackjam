@@ -12,7 +12,7 @@ class PhotoListContainer extends Component {
   getPhotos() {
     fetchPhotos()
       .then(response => response.json())
-      .then((photos) => {this.props.receivePhotos(photos.slice(0,20))})
+      .then((photos) => {this.props.receivePhotos(photos)})
       .catch(console.log)
   }
 
@@ -22,7 +22,8 @@ class PhotoListContainer extends Component {
 }
 
 PhotoListContainer.propTypes = {
-  receivePhotos: React.PropTypes.func.isRequired
+  receivePhotos: React.PropTypes.func.isRequired,
+  photos: React.PropTypes.array.isRequired,
 }
 
 const mapStateToProps = (state) => (

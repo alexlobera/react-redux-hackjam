@@ -2,15 +2,18 @@ import React from "react";
 import { Link } from 'react-router';
 
 const PhotoList = (props) => (
-    <ul>
-    {
-        props.photos.map(photo => (
-            <Link to={'/photos/' + photo.id} key={photo.id}>
-                <img src={photo.thumbnailUrl} />
-            </Link>
-        ))
-    }
-    </ul>
+    <div>
+      <h1>Photos</h1>
+      <Link to={'/comments/'}>See comments</Link>
+      <hr />
+      {
+          props.photos.map(photo => (
+              <img src={photo.thumbnailUrl} key={photo.id}/>
+          ))
+      }
+      <hr />
+      <button>Next page</button> <button>Previous page</button>
+    </div>
 )
 
 export default PhotoList;

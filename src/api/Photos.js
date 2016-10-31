@@ -1,5 +1,5 @@
-const fetchPhotos = () => {
-  return fetch('http://jsonplaceholder.typicode.com/photos/', {
+const fetchPhotos = (page = 1) => {
+  return fetch(`http://jsonplaceholder.typicode.com/photos?_page=${page}`, {
     method: 'get'
   });
 }
